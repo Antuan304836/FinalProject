@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Reply the topic
+{% endblock %}
+
+{% block main %}
+    <form action="/sendreply" method="post">
+        <div class="mb-3">
+            <label>Sender:</label>
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="sender" name="sender" placeholder="Username" type="text" >
+        </div>
+        <div class="mb-3">
+            <label>Reciper:</label>
+            <input class="form-control mx-auto w-auto" id="reciver" name="reciver" placeholder="Reciver" type="text" value="{{reply_text.sender}}">
+        </div>
+        <div class="mb-3">
+            <label>Topic:</label>
+            <input class="form-control mx-auto w-auto" id="title" name="title" placeholder="Topick" type="text" value="{{reply_text.title}}">
+        </div>
+        <div class="mb-3">
+            <label>Text:</label>
+            <textarea autocomplete="off" autofocus class="form-control mx-auto w-auto" name = "text"></textarea>
+        </div>
+        <button class="btn btn-primary" type="submit">Send</button>
+    </form>
+{% endblock %}

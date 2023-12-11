@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register your field
+{% endblock %}
+
+
+{% block main %}
+
+<form action="/fieldreg" method="post">
+    <div class="mb-3">
+        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="username" name="username" placeholder="Username" type="text">
+    </div>
+    <div class="mb-3">
+        <input class="form-control mx-auto w-auto" id="field_name" name="field_name" placeholder="Field name" type="text">
+    </div>
+    <button class="btn btn-primary" type="submit">Register</button>
+</form>
+
+
+
+{% endblock %}

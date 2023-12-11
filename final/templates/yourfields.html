@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Your fields
+{% endblock %}
+
+
+{% block main %}
+
+    <div>
+        {% for Field in Fields %}
+        <div class="Forums">
+
+            <h5>Field name: {{Field.Fieldname}}</h4>
+
+            <form action="/calculatef" method="post">
+                <input type="hidden" id="Fields_id" name="Fields_id" value="{{ Field.id }}">
+                <input type="submit" class="btn btn-info" value="Calculate">
+            </form>
+        </div>
+        {%endfor%}
+    </div>
+
+
+{% endblock %}

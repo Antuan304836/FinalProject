@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Forums
+{% endblock %}
+
+
+{% block main %}
+
+    <div>
+        {% for message in messages %}
+        <div class="Forums">
+            <h5>Author: {{ message.sender }} </h7>
+            <h5>Topic: {{message.title}}</h4>
+            <p>{{ message.time}}</p>
+            <form action="/topic" method="post">
+                <input type="hidden" id="messages_id" name="messages_id" value="{{ message.id }}">
+                <input type="submit" class="btn btn-info" value="Look the topic">
+            </form>
+        </div>
+        {%endfor%}
+    </div>
+
+
+{% endblock %}
+
+

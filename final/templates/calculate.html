@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Calculate
+{% endblock %}
+
+{% block main %}
+    <form action="/calculate" method="post">
+        <div class = "mb-3">
+            <input class="form-control mx-auto w-auto" id="Field_name" name="Field_name" placeholder="Fieldname" type="text" value="{{Fields.Fieldname}}">
+        </div>
+
+        <div class="mb-3">
+            <select name ="a_year_ago">
+                <option value="">Grown year ago</option>
+                {% for grain in grains %}
+                    <option value = "{{ grain.grain }}">{{ grain.grain }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+            <form action="/calculateresult" method="post">
+                <input type="hidden" id="Grain_id" name="Grain_id" value="{{ grains.id }}">
+                <input type="submit" class="btn btn-info" value="Calculate">
+            </form>
+        </div>
+    </form>
+{% endblock %}

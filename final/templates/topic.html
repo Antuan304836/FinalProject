@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Topick
+{% endblock %}
+
+
+{% block main %}
+        <div autocomplete="off" autofocus class="form-control mx-auto w-auto" >
+            <div class="Forums">
+                <h4>Sender:</h4>
+                <h6 class="Forums2">{{topic_text.sender}}</h6>
+            </div>
+            <div class="Forums">
+                <h4>topic:</h4>
+                <h6 class="Forums2">{{topic_text.title}}</h6>
+            </div>
+
+            <div class="Forums">
+                <h4>Content:</h4>
+                <h6 class="Forums2">{{topic_text.text}}</h6>
+            </div>
+            <div class="Forums">
+                <h4>Time:</h4>
+                <h6 class="Forums2">{{topic_text.time}}</h6>
+            </div>
+            <div>
+                <form action="reply" method="post">
+                    <input type = "hidden" id="topic_text_id" name="topic_text_id" value="{{ topic_text.id }}">
+                    <input type="submit" class="btn btn-info" value="Reply">
+                </form>
+            </div>
+        </div>
+
+{% endblock %}

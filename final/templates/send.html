@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Start new topic
+{% endblock %}
+
+{% block main %}
+    <form action="/send" method="post">
+        <div class="mb-3">
+            <label>Author:</label>
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="username" name="sender" placeholder="Username" type="text" value="{{sender}}">
+        </div>
+        <div class="mb-3">
+            <label>Topic:</label>
+            <input class="form-control mx-auto w-auto" id="title" name="title" placeholder="Topick" type="text">
+        </div>
+        <div class="mb-3">
+            <label>Text:</label>
+            <textarea autocomplete="off" autofocus class="form-control mx-auto w-auto" name = "text"></textarea>
+        </div>
+        <button class="btn btn-primary" type="submit">Send</button>
+    </form>
+{% endblock %}
